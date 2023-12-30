@@ -9,7 +9,7 @@ import matplotlib.pyplot as pltimport
 seaborn as sns
 import missingno as msno
 
-df = pd.read_csv('input.csv')
+df =pd.read_csv('input.csv')
 
 df.shape()
 df.head():
@@ -27,9 +27,9 @@ df.keys()
 sns.displot(df, x='SellingPrice',bins=[5000,10000,15000,20000,25000,30000,35000,40000,5000,60000,80000],aspect=1.2,color='#fd6c9e')
 sns.displot(df, x='OriginalPrice',bins=[5000,10000,15000,20000,25000,30000,35000,40000,50000,60000,80000aspect=1.2,color='#ff8243')
 sns.displot(df, x='Selling Price',bins=5, hue='Brand',aspect=1.2)
-fig, ax = plt.subplots(figsize=(15,3))ax=sns.countplot(x="Brand", data=df)
-fig, ax = plt.subplots(figsize=(15,3))ax = sns.stripplot(y="Rating", x="Brand",data=df)
-fig, ax = plt.subplots(figsize=(15,3))ax = sns.stripplot(y="Selling Price", x="Brand",data=df)
-fig, ax = plt.subplots(figsize=(15,3))ax = sns.stripplot(y="Original Price", x="Brand",data=df)
-fig, ax = plt.subplots(figsize=(15,6))ax = sns.boxplot(x="Brand", y="Selling Price",data=df)
+fig, ax =plt.subplots(figsize=(15,3))ax=sns.countplot(x="Brand", data=df)
+fig, ax =plt.subplots(figsize=(15,3))ax = sns.stripplot(y="Rating", x="Brand",data=df)
+fig, ax =plt.subplots(figsize=(15,3))ax = sns.stripplot(y="Selling Price", x="Brand",data=df)
+fig, ax =plt.subplots(figsize=(15,3))ax = sns.stripplot(y="Original Price", x="Brand",data=df)
+fig, ax =plt.subplots(figsize=(15,6))ax = sns.boxplot(x="Brand", y="Selling Price",data=df)
 round(df.groupby('Brand')['Selling Price'].mean(),0).sort_values(ascending=False)
